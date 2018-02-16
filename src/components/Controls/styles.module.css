@@ -1,0 +1,28 @@
+.wrapper {
+  margin: 1rem;
+}
+
+@media print {
+  .wrapper {
+    display: none;
+  }
+}
+
+.colorPicker {
+  margin-bottom: 1rem;
+}
+
+.fgChooserHeader,
+.sizeChooserHeader {
+  margin: .25rem 0;
+}
+
+.fgChooser,
+.sizeChooser {
+  margin-bottom: .125rem;
+}
+
+.fgChooser label,
+.sizeChooser label {
+  margin-left: .5rem;
+}

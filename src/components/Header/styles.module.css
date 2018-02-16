@@ -1,0 +1,19 @@
+.wrapper {
+  margin: 1rem;
+}
+
+.logo {
+  color: black;
+  text-decoration: none;
+}
+
+@media print {
+  .wrapper {
+    display: none;
+  }
+
+  .logo {
+    display: none;
+  }
+}
+
