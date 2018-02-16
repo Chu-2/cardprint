@@ -11,19 +11,17 @@ const TemplateWrapper = ({ children }) => (
     <Helmet
       title="cardprint"
       meta={[
-        { name: 'description', content: 'Sample' },
-        { name: 'keywords', content: 'sample, something' },
+        { name: 'description', content: 'Kanban card printer' },
+        { name: 'keywords', content: 'kanban card printer"' }
       ]}
     />
     <Header />
-    <div>
-      {children()}
-    </div>
+    <div>{children()}</div>
   </div>
 )
 
 TemplateWrapper.propTypes = {
-  children: PropTypes.func,
+  children: PropTypes.func
 }
 
 export default TemplateWrapper
