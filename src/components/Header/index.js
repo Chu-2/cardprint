@@ -5,7 +5,12 @@ import styles from './styles.module.css'
 const Header = () => (
   <div className={styles.wrapper}>
     <h1>
-      <Link className={styles.logo}>cardprint</Link>
+      <Link
+        className={styles.logo}
+        to="http://ualibr-cardprint.s3-website-us-west-2.amazonaws.com"
+      >
+        cardprint
+      </Link>
     </h1>
   </div>
 )

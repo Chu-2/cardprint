@@ -8,11 +8,14 @@
     "gatsby-link": "^1.6.37",
     "gatsby-plugin-react-helmet": "^2.0.5",
     "normalize.css": "^8.0.0",
+    "querystringify": "^1.0.0",
     "react-color": "^2.13.8",
     "react-helmet": "^5.2.0"
   },
   "keywords": [
-    "gatsby", "kanaban", "kanban card printer"
+    "gatsby",
+    "kanaban",
+    "kanban card printer"
   ],
   "license": "MIT",
   "main": "n/a",

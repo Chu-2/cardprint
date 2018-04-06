@@ -1,7 +1,9 @@
 import React from 'react'
 import Link from 'gatsby-link'
+import QueryString from 'querystringify'
 import CardForm from '../components/CardForm'
 import Controls from '../components/Controls'
+import Bookmarklet from '../components/Bookmarklet'
 
 class IndexPage extends React.Component {
   state = {
@@ -11,7 +13,9 @@ class IndexPage extends React.Component {
       foregroundControl: 'dark',
       width: '2.75in',
       height: '2.75in',
-      sizeControl: 'large'
+      sizeControl: 'large',
+      number: '',
+      subject: ''
     }
   }
 
@@ -29,7 +33,7 @@ class IndexPage extends React.Component {
       card.foregroundControl = 'dark'
     } else {
       card.foreground = '#ffffff'
-      card.foregroundControl = 'light'      
+      card.foregroundControl = 'light'
     }
 
     this.setState({ card })
@@ -51,16 +55,41 @@ class IndexPage extends React.Component {
     this.setState({ card })
   }
 
+  handleCardNumber = event => {
+    let card = this.state.card
+    card.number = event.target.value
+    this.setState({ card })
+  }
+
+  handleCardSubject = event => {
+    let card = this.state.card
+    card.subject = event.target.value
+    this.setState({ card })
+  }
+
+  componentDidMount() {
+    let query = QueryString.parse(location.search)
+    let card = this.state.card
+    card.number = query.number
+    card.subject = query.subject
+    this.setState({ card })
+  }
+
   render() {
     return (
       <div>
-        <CardForm card={this.state.card} />
+        <CardForm
+          card={this.state.card}
+          handleCardNumber={this.handleCardNumber}
+          handleCardSubject={this.handleCardSubject}
+        />
         <Controls
           card={this.state.card}
           handleCardBgColor={this.handleCardBgColor}
           handleCardFgColor={this.handleCardFgColor}
           handleCardSize={this.handleCardSize}
         />
+        <Bookmarklet />
       </div>
     )
   }

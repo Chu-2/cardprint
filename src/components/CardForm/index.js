@@ -11,16 +11,21 @@ const CardForm = props => (
     }}
   >
     <div className={styles.wrapper}>
-      <div className={styles.card} style={{
-        width: props.card.width,
-        height: props.card.height
-      }}>
+      <div
+        className={styles.card}
+        style={{
+          width: props.card.width,
+          height: props.card.height
+        }}
+      >
         <div className={styles.number}>
           <div className={styles.numberInner}>
             <input
               type="text"
               placeholder="10001"
               className={styles.numberInput}
+              value={props.card.number}
+              onChange={props.handleCardNumber}
             />
           </div>
         </div>
@@ -30,7 +35,8 @@ const CardForm = props => (
               name=""
               id=""
               className={styles.bodyInput}
-              placeholder="Description..."
+              value={props.card.subject}
+              onChange={props.handleCardSubject}
             />
           </div>
         </div>
