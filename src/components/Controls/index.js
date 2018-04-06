@@ -20,6 +20,7 @@ const Controls = props => (
           id="fgColorDark"
           value="dark"
           onChange={props.handleCardFgColor}
+          checked={props.card.foregroundControl == 'dark'}
         />
         <label htmlFor="fgColorDark">Dark</label>
       </div>
@@ -31,6 +32,7 @@ const Controls = props => (
           id="fgColorLight"
           value="light"
           onChange={props.handleCardFgColor}
+          checked={props.card.foregroundControl == 'light'}
         />
         <label htmlFor="fgColorLight">Light</label>
       </div>
@@ -46,6 +48,7 @@ const Controls = props => (
           id="sizeBig"
           value="big"
           onChange={props.handleCardSize}
+          checked={props.card.sizeControl == 'large'}
         />
         <label htmlFor="sizeBig">Big</label>
       </div>
@@ -57,6 +60,7 @@ const Controls = props => (
           id="sizeSmall"
           value="small"
           onChange={props.handleCardSize}
+          checked={props.card.sizeControl == 'small'}
         />
         <label htmlFor="sizeSmall">Small</label>
       </div>

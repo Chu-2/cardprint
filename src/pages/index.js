@@ -8,8 +8,10 @@ class IndexPage extends React.Component {
     card: {
       background: '#ffffff',
       foreground: '#000000',
+      foregroundControl: 'dark',
       width: '2.75in',
-      height: '2.75in'
+      height: '2.75in',
+      sizeControl: 'large'
     }
   }
 
@@ -24,8 +26,10 @@ class IndexPage extends React.Component {
 
     if (event.target.value == 'dark') {
       card.foreground = '#000000'
+      card.foregroundControl = 'dark'
     } else {
       card.foreground = '#ffffff'
+      card.foregroundControl = 'light'      
     }
 
     this.setState({ card })
@@ -37,9 +41,11 @@ class IndexPage extends React.Component {
     if (event.target.value == 'big') {
       card.width = '2.75in'
       card.height = '2.75in'
+      card.sizeControl = 'large'
     } else {
       card.width = '1.75in'
       card.height = '1.75in'
+      card.sizeControl = 'small'
     }
 
     this.setState({ card })

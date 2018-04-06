@@ -17,7 +17,6 @@ const CardForm = props => (
       }}>
         <div className={styles.number}>
           <div className={styles.numberInner}>
-            <span className={styles.numberSymbol}>#</span>
             <input
               type="text"
               placeholder="10001"
