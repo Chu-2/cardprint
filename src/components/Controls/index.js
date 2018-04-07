@@ -1,17 +1,21 @@
 import React from 'react'
-import { GithubPicker } from 'react-color'
+import { CompactPicker } from 'react-color'
 import styles from './styles.module.css'
 
 const Controls = props => (
   <div className={styles.wrapper}>
-    <GithubPicker
-      color={props.card.background}
-      onChangeComplete={props.handleCardBgColor}
-      className={styles.colorPicker}
-    />
+    <div className={styles.control}>
+      <h3 className={styles.controlHeading}>Card color</h3>
 
-    <div>
-      <h3 className={styles.fgChooserHeader}>Text Color</h3>
+      <CompactPicker
+        color={props.card.background}
+        onChangeComplete={props.handleCardBgColor}
+        className={styles.colorPicker}
+      />
+    </div>
+
+    <div className={styles.control}>
+      <h3 className={styles.controlHeading}>Text Color</h3>
 
       <div className={styles.fgChooser}>
         <input
@@ -38,8 +42,8 @@ const Controls = props => (
       </div>
     </div>
 
-    <div>
-      <h3 className={styles.sizeChooserHeader}>Size</h3>
+    <div className={styles.control}>
+      <h3 className={styles.controlHeading}>Size</h3>
 
       <div className={styles.sizeChooser}>
         <input

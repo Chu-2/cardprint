@@ -1,3 +1,15 @@
-.wrapper {
-  margin: 1rem;
+:root {
+  --near-white: #F4F4F4;
+  --light-green: #9EEBCF;
+}
+
+.link {
+  border-bottom: 1px dotted var(--near-white);
+  text-decoration: none;
+  color: var(--near-white);
+}
+
+.link:hover {
+  color: var(--light-green);
+  border-bottom-color: var(--light-green);
 }

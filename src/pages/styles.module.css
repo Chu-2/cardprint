@@ -1,0 +1,39 @@
+:root {
+  --near-white: #F4F4F4;
+  --washed-yellow: #FFFCEB;
+  --light-yellow: #FBF1A9;
+}
+
+.wrapper {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+}
+
+.canvas {
+  position: relative;
+  flex: 1;
+}
+
+.controls {
+  width: 18rem;
+  background-color: var(--washed-yellow);
+  border-left: 1px solid var(--light-yellow);
+}
+
+@media print {
+  .wrapper {
+    position: relative;
+    display: block;
+  }
+  
+  .controls {
+    display: none;
+  }
+}
+

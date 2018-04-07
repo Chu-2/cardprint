@@ -4,6 +4,7 @@ import QueryString from 'querystringify'
 import CardForm from '../components/CardForm'
 import Controls from '../components/Controls'
 import Bookmarklet from '../components/Bookmarklet'
+import styles from './styles.module.css'
 
 class IndexPage extends React.Component {
   state = {
@@ -77,19 +78,22 @@ class IndexPage extends React.Component {
 
   render() {
     return (
-      <div>
-        <CardForm
-          card={this.state.card}
-          handleCardNumber={this.handleCardNumber}
-          handleCardSubject={this.handleCardSubject}
-        />
-        <Controls
-          card={this.state.card}
-          handleCardBgColor={this.handleCardBgColor}
-          handleCardFgColor={this.handleCardFgColor}
-          handleCardSize={this.handleCardSize}
-        />
-        <Bookmarklet />
+      <div className={styles.wrapper}>
+        <div className={styles.canvas}>
+          <CardForm
+            card={this.state.card}
+            handleCardNumber={this.handleCardNumber}
+            handleCardSubject={this.handleCardSubject}
+          />
+        </div>
+        <div className={styles.controls}>
+          <Controls
+            card={this.state.card}
+            handleCardBgColor={this.handleCardBgColor}
+            handleCardFgColor={this.handleCardFgColor}
+            handleCardSize={this.handleCardSize}
+          />
+        </div>
       </div>
     )
   }

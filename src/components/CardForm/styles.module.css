@@ -1,11 +1,25 @@
-.wrapper {
-  margin: 1rem;
+.inner {
+  position: absolute;
+  z-index: 20;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding-top: 4rem;
+}
+
+@media print {
+  .inner {
+    position: relative;
+    top: 0;
+    left: 0;
+    transform: none;
+  }
 }
 
 .cardBleed {
   display: inline-block;
   margin-left: 1rem;
-  transition: background-color .2s ease, color .2s ease;
+  transition: background-color 0.2s ease, color 0.2s ease;
 
   /* Printing workarounds */
   -webkit-print-color-adjust: exact;
@@ -13,26 +27,25 @@
   color-adjust: exact;
 }
 
+.wrapper {
+  margin: 1rem;
+}
+
 .card {
-  /* width: 2.75in;
-  height: 2.75in; */
   display: flex;
   flex-direction: column;
   border: 1px dashed black;
   overflow: hidden;
-  transition: width .2s ease, height .2s ease;
+  transition: width 0.2s ease, height 0.2s ease;
 }
 
 .number {
   width: 100%;
+  font-weight: bold;
 }
 
 .numberInner {
-  padding: .125in;
-}
-
-.numberSymbol {
-
+  padding: 0.125in;
 }
 
 .numberInput {

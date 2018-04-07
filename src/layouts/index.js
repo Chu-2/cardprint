@@ -1,24 +1,40 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
-
 import Header from '../components/Header'
 import 'normalize.css'
 import './index.css'
 
-const TemplateWrapper = ({ children }) => (
-  <div>
-    <Helmet
-      title="cardprint"
-      meta={[
-        { name: 'description', content: 'Kanban card printer' },
-        { name: 'keywords', content: 'kanban card printer"' }
-      ]}
-    />
-    <Header />
-    <div>{children()}</div>
-  </div>
-)
+class TemplateWrapper extends React.Component {
+  WebFontConfig = {
+    google: {
+      families: ['PT Sans', 'PT Sans Caption']
+    }
+  }
+
+  componentWillMount() {
+    if (typeof window !== 'undefined') {
+      let WebFont = require('webfontloader')
+      WebFont.load(this.WebFontConfig)
+    }
+  }
+
+  render() {
+    return (
+      <div>
+        <Helmet
+          title="cardprint"
+          meta={[
+            { name: 'description', content: 'Kanban card printer' },
+            { name: 'keywords', content: 'kanban card printer"' }
+          ]}
+        />
+        <Header />
+        <div>{this.props.children()}</div>
+      </div>
+    )
+  }
+}
 
 TemplateWrapper.propTypes = {
   children: PropTypes.func
