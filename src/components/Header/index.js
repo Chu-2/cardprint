@@ -3,7 +3,7 @@ import Link from 'gatsby-link'
 import styles from './styles.module.css'
 import Bookmarklet from '../Bookmarklet'
 
-const Header = () => (
+const Header = props => (
   <div className={styles.wrapper}>
     <h1 className={styles.title}>
       <Link
@@ -14,7 +14,18 @@ const Header = () => (
       </Link>
     </h1>
 
-    <Bookmarklet />
+    <div className={styles.actions}>
+      <div
+        style={{
+          marginRight: `1rem`
+        }}
+      >
+        <a onClick={window.print} className={styles.link}>
+          Print
+        </a>
+      </div>
+      <Bookmarklet />
+    </div>
   </div>
 )
 

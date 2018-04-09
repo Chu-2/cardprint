@@ -23,7 +23,7 @@ class TemplateWrapper extends React.Component {
     return (
       <div>
         <Helmet
-          title="cardprint"
+          title="Kanban card printer"
           meta={[
             { name: 'description', content: 'Kanban card printer' },
             { name: 'keywords', content: 'kanban card printer"' }
