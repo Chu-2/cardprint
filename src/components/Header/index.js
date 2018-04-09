@@ -3,6 +3,12 @@ import Link from 'gatsby-link'
 import styles from './styles.module.css'
 import Bookmarklet from '../Bookmarklet'
 
+function handlePrintClick() {
+  if (typeof window !== 'undefined') {
+    window.print()
+  }
+}
+
 const Header = props => (
   <div className={styles.wrapper}>
     <h1 className={styles.title}>
@@ -20,7 +26,7 @@ const Header = props => (
           marginRight: `1rem`
         }}
       >
-        <a onClick={window.print} className={styles.link}>
+        <a onClick={handlePrintClick} className={styles.link}>
           Print
         </a>
       </div>
